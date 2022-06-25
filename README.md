@@ -1,5 +1,5 @@
 # PEResourceInject
-A way to avoid using VirtualAllocEx/WriteProcessMemory to inject shellcode into a process. 
+A way to avoid using VirtualAllocEx/WriteProcessMemory to inject shellcode into a process. You need access to modify the target executable.
 
 - Write shellcode to the target's .rsrc as a bitmap using the UpdateResource APIs
 - Spawn the exe suspended
@@ -7,10 +7,14 @@ A way to avoid using VirtualAllocEx/WriteProcessMemory to inject shellcode into 
 - Change memory protections
 - Get/SetThreadContext to execute
 
-## Usage  
+## Usage (x64 only)  
 `PEResourceInject.exe -exe <C:\path\to\target.exe> -bin <C:\Path\to\raw\shellcode.bin>`
 
-## References/APIs:  
+Tested with:  
+- MS Office/VLC/FireFox 
+- Shellcode: MSFVenom/Apollo
+
+### References/APIs:  
 [A dive into the PE file format by 0xRick](https://0xrick.github.io/win-internals/pe8/)  
     
 [BeginUpdateResource](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-beginupdateresourcea)  
