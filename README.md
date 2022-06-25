@@ -4,7 +4,7 @@ A way to avoid using VirtualAllocEx/WriteProcessMemory to inject shellcode into 
 - Write shellcode to the target's .rsrc as a bitmap using the UpdateResource APIs
 - Spawn the exe suspended
 - Calculate the shellcode location by parsing the PE header
-- Change memory protections
+- VirtualProtectEx to RX
 - Get/SetThreadContext to execute
 
 ## Usage (x64 only)  
