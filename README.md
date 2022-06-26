@@ -1,5 +1,7 @@
 # PEResourceInject
-A way to avoid using VirtualAllocEx/WriteProcessMemory to inject shellcode into a process. You need access to modify the target executable.
+A way to avoid using VirtualAllocEx/WriteProcessMemory to inject shellcode into a process. You need access to modify the target executable.  
+
+If the target exe has a .rsrc section already, it is overwritten with the new resource. However if the exe did not have a .rsrc, the section is added before being spawned.
 
 - Write shellcode to the target's .rsrc as a bitmap using the UpdateResource APIs
 - Spawn the exe suspended
